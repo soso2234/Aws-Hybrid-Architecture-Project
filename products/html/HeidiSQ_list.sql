@@ -14,7 +14,7 @@
 
 
 -- dev 데이터베이스 구조 내보내기
-CREATE DATABASE IF NOT EXISTS `dev` /*!40100 DEFAULT CHARACTER SET utf8mb3 */;
+CREATE DATABASE IF NOT EXISTS `dev` ;
 USE `dev`;
 
 -- 테이블 dev.t_category 구조 내보내기
@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `t_category` (
 -- 테이블 데이터 dev.t_category:~0 rows (대략적) 내보내기
 /*!40000 ALTER TABLE `t_category` DISABLE KEYS */;
 /*!40000 ALTER TABLE `t_category` ENABLE KEYS */;
+
 
 -- 테이블 dev.t_image 구조 내보내기
 CREATE TABLE IF NOT EXISTS `t_image` (
@@ -54,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `t_product` (
   `add_delivery` int(11) NOT NULL DEFAULT 0 COMMENT '추가배송비',
   `tags` varchar(100) DEFAULT NULL COMMENT '해시태그',
   `outbound_days` int(2) DEFAULT 5 COMMENT '출고일',
-  `created_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '제품등록일',
+  `created_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '제품등록일',
   `seller_id` int(11) unsigned NOT NULL COMMENT '판매자아이디',
   `category_id` int(11) unsigned NOT NULL COMMENT '카테고리아이디',
   PRIMARY KEY (`id`),
@@ -114,7 +115,7 @@ CREATE TABLE IF NOT EXISTS t_category (
 
 -- 테이블 dev.t_seller 구조 내보내기
 CREATE TABLE IF NOT EXISTS t_seller (
-  id int(11) NOT NULL AUTO INCREMENT,
+  id int(11) NOT NULL AUTO_INCREMENT,
   name varchar(50) NOT NULL,
   email varchar(100) NOT NULL,
   phone varchar(12) NOT NULL,
@@ -129,6 +130,7 @@ CREATE TABLE IF NOT EXISTS t_user (
   PRIMARY KEY (email)
 );
 
+
 -- 테이블 dev.t_product 구조 내보내기
 CREATE TABLE IF NOT EXISTS t_product (
   id int(11) NOT NULL,
@@ -138,7 +140,7 @@ CREATE TABLE IF NOT EXISTS t_product (
   add_delivery int(11) NOT NULL DEFAULT 0,
   tags varchar(100) DEFAULT NULL,
   outbound_days int(2) DEFAULT 5,
-  created_date datetime NOT NULL DEFAULT current_timestamp(),
+  created_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   seller_id int(11) NOT NULL,
   category_id int(11) NOT NULL,
   PRIMARY KEY (id),
