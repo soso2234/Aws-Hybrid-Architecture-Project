@@ -3,9 +3,22 @@ const { request } = require('express');
 const express = require('express');
 const app = express();
 const session = require('express-session');
-
 //node restart 없이 자동반영되게끔
 const fs = require('fs');   //filesystem으로 directory에 접근할수있게한다
+
+//aws update
+const path = require('path');
+
+// Vue 빌드 파일이 있는 정적 경로 설정
+const distPath = path.join(__dirname, '..', 'client', 'dist'); // 'server' 폴더에서 '../client/dist' 경로 지정
+app.use(express.static(distPath));
+
+// Vue Router (history mode) 사용을 위한 설정: 모든 GET 요청에 대해 index.html 반환
+app.get('*', (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
+});
+
+//aws update
 
 app.use(session({
     secret: 'secret code',      //session에 대한 key
