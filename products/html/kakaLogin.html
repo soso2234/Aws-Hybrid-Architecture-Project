@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="javascript:kakaoLogin();"><img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F996ED33E5B751C630B&imgrefurl=https%3A%2F%2Fhowtodic.com%2F137&tbnid=B1FaOSEi4RecXM&vet=12ahUKEwjLn9mB3dr6AhVF95QKHW_0ABYQMyg9egQIARBN..i&docid=oPQNtoZxOZAToM&w=200&h=200&q=%EC%B9%B4%EC%B9%B4%EC%98%A4%EA%B3%84%EC%A0%95%EB%A1%9C%EA%B7%B8%EC%9D%B8&ved=2ahUKEwjLn9mB3dr6AhVF95QKHW_0ABYQMyg9egQIARBN" style="height:50px;width:auto;"></a>
+    <script src="https://developers.kakao.com/sdk/ks/kakao.js"></script>
+    <script>
+        window.kakao.init("495352afc7ad2c6c24b84ba29e9f9488");  //자바스크립트 키
+
+        function kakaoLogin() {
+            window.kakao.Auth.login({
+                scope:'profile_nickname,profile_image,account_email,gender',
+                success: function(authObj) {
+                    console.log(authObj);
+                    window.kakao.API.request({
+                        url:'/v2/user/me',
+                        success: res => {
+                            const kakao_account = res.kakao_account;
+                            console.log(kakao_account);
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

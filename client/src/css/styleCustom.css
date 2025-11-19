@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap');
+* {
+    font-family: 'Comfortaa', cursive;
+}
+body {
+    margin: 0;
+}
+.cart, .container {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+}
+/* 메인화면 이미지 */
+.carouselBox {
+    margin-bottom: auto;
+    padding-bottom: 30px;
+}
+.carouselBox img {
+    width: 250px;
+    height: 300px;
+}
+
+.dataBoxNull ul {
+    padding: 30px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.dataBoxNull ul li{
+    color: red;
+    list-style:none;
+}
+
+.textBox ul {
+    background-color:#F2F8F8;
+    padding: 30px;
+    margin-bottom: 50px;
+    border: #F2F8F8 solid 1px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 300;
+}
+.textBox ul li {
+    list-style: none;
+    list-style-type: none;
+}
+
+/* .textBox ul :first-child {
+    color: limegreen;
+} */
+
+.cards {
+    width: 16rem;
+}
+.cards > a {
+    width: 100%;
+}
+.cards > a img {
+    object-fit: fill;
+    margin-bottom: 15px;
+}
+.cards .card-body {
+    width: 100%;
+    height: auto;
+}
+
+/*orderDetail 화면*/
+/* 배송정보 */
+.orderTable {
+    border: solid 1px gray;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12pt;
+}
+table.orderTable th, td { border: solid 1px #e0e0eb; padding: 12px 10px;}
+.orderTabetd {font-size: 12pt; background-color: whitesmoke;}
+.orderTable input, textarea {
+    width: 300px;
+    height: 30px;
+    font-size: 13px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+}
+.productCreatInput input {
+    width: 300px;
+    height: 30px;
+    font-size: 13px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);   
+}
+/* 주문 금액 */
+table.calc {
+    border: solid 1px #e0e0eb;
+    border-collapse: collapse;
+    background-color: #F2F8F8;
+    width: 100%;
+    font-size: 10pt;
+}
+table.calc th {
+    border: solod 1px #e0e0eb;
+}
+table.calc td {
+    border: solid 1px #e0e0eb;
+}
+/*navigation / sales 버튼*/
+.btn-login, .btn-cart, .btn-orderList  {
+    border: 0;
+    border-radius: 50%;
+    border-color: #E8F5FF;
+    background-color:#E8F5FF;
+}
+.btn-sales {
+    border: 0;
+    border-radius: 50%;
+    border-color: #fff;
+    background-color: #fff;    
+}
+.btn-login > img {
+    width:40px;
+    height: auto;
+}
+.btn-sales > img {
+    width:30px;
+    height: auto;   
+}
+.btn-cart > img, .btn-orderList > img {
+    width:30px;
+    height: auto;
+}
+/*카트 버튼*/
+.cart__bigorderbtn {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.cart__bigorderbtn.left {
+    background-color: white;
+    border: 1px lightgray solid;
+}
+
+.cart__bigorderbtn.right {
+    background-color: #DCEBFF;
+    color: #989898;
+    border: none;
+}
+/* 상품등록/수정/이미지등록 화면 */
+.inner {
+    background-color:	#E8F5FF;
+    padding: 20px;
+    border-radius: 30px;
+}
+/* 판매상품리스트 화면 */
+.inner2 {
+    background-color:	#fff;
+    padding: 20px;
+    border-radius: 30px;
+    border: 3px solid 	#DCEBFF;
+}
+
+/* 모바일 웹앱 적용 */
+@media (max-width: 600px) {
+    main {
+
+    }
+}
